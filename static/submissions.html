@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submissions | Real-Time Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container wide">
+        <header>
+            <h1>Submitted Records</h1>
+            <p>Real-time view of all form submissions.</p>
+        </header>
+
+        <div class="table-responsive">
+            <table id="submissionsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Date of Birth</th>
+                        <th>Skills</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Submitted At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">&larr; Back to Form</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline script to init table load since we are reusing script.js for main logic
+        // or we can extend script.js to auto-detect page.
+        // Let's rely on script.js to detect page or call a function if present.
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadSubmissions === 'function') {
+                loadSubmissions();
+            }
+        });
+    </script>
+</body>
+
+</html>
